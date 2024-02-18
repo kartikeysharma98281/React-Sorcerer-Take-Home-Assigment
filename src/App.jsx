@@ -1,5 +1,4 @@
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
-import "./App.css";
 import { useState } from "react";
 import {
   Editor,
@@ -50,38 +49,38 @@ function App() {
           focusOffset: 1,
         }),
         "",
-        editorState.getCurrentInlineStyle()
+        editorState.getCurrentInlineStyle(),
       );
 
       const newEditorState = EditorState.push(
         editorState,
         newContentState,
-        "remove-range"
+        "remove-range",
       );
 
       let finalEditorState = RichUtils.toggleBlockType(
         newEditorState,
-        "header-one"
+        "header-one",
       );
 
       if (finalEditorState.getCurrentInlineStyle().has("RED_TEXT")) {
         finalEditorState = RichUtils.toggleInlineStyle(
           finalEditorState,
-          "RED_TEXT"
+          "RED_TEXT",
         );
       }
 
       if (finalEditorState.getCurrentInlineStyle().has("UNDERLINE")) {
         finalEditorState = RichUtils.toggleInlineStyle(
           finalEditorState,
-          "UNDERLINE"
+          "UNDERLINE",
         );
       }
 
       if (finalEditorState.getCurrentInlineStyle().has("BOLD")) {
         finalEditorState = RichUtils.toggleInlineStyle(
           finalEditorState,
-          "BOLD"
+          "BOLD",
         );
       }
 
@@ -101,31 +100,31 @@ function App() {
           focusOffset: 1,
         }),
         "",
-        editorState.getCurrentInlineStyle()
+        editorState.getCurrentInlineStyle(),
       );
 
       const newEditorState = EditorState.push(
         editorState,
         newContentState,
-        "remove-range"
+        "remove-range",
       );
 
       let finalEditorState = RichUtils.toggleInlineStyle(
         newEditorState,
-        "BOLD"
+        "BOLD",
       );
 
       if (finalEditorState.getCurrentInlineStyle().has("RED_TEXT")) {
         finalEditorState = RichUtils.toggleInlineStyle(
           finalEditorState,
-          "RED_TEXT"
+          "RED_TEXT",
         );
       }
 
       if (finalEditorState.getCurrentInlineStyle().has("UNDERLINE")) {
         finalEditorState = RichUtils.toggleInlineStyle(
           finalEditorState,
-          "UNDERLINE"
+          "UNDERLINE",
         );
       }
 
@@ -146,31 +145,31 @@ function App() {
           focusOffset: 2,
         }),
         "",
-        editorState.getCurrentInlineStyle()
+        editorState.getCurrentInlineStyle(),
       );
 
       const newEditorState = EditorState.push(
         editorState,
         newContentState,
-        "remove-range"
+        "remove-range",
       );
 
       let finalEditorState = RichUtils.toggleInlineStyle(
         newEditorState,
-        "RED_TEXT"
+        "RED_TEXT",
       );
 
       if (finalEditorState.getCurrentInlineStyle().has("BOLD")) {
         finalEditorState = RichUtils.toggleInlineStyle(
           finalEditorState,
-          "BOLD"
+          "BOLD",
         );
       }
 
       if (finalEditorState.getCurrentInlineStyle().has("UNDERLINE")) {
         finalEditorState = RichUtils.toggleInlineStyle(
           finalEditorState,
-          "UNDERLINE"
+          "UNDERLINE",
         );
       }
 
@@ -192,31 +191,31 @@ function App() {
           focusOffset: 3,
         }),
         "",
-        editorState.getCurrentInlineStyle()
+        editorState.getCurrentInlineStyle(),
       );
 
       const newEditorState = EditorState.push(
         editorState,
         newContentState,
-        "remove-range"
+        "remove-range",
       );
 
       let finalEditorState = RichUtils.toggleInlineStyle(
         newEditorState,
-        "UNDERLINE"
+        "UNDERLINE",
       );
 
       if (finalEditorState.getCurrentInlineStyle().has("RED_TEXT")) {
         finalEditorState = RichUtils.toggleInlineStyle(
           finalEditorState,
-          "RED_TEXT"
+          "RED_TEXT",
         );
       }
 
       if (finalEditorState.getCurrentInlineStyle().has("BOLD")) {
         finalEditorState = RichUtils.toggleInlineStyle(
           finalEditorState,
-          "BOLD"
+          "BOLD",
         );
       }
 
@@ -234,17 +233,17 @@ function App() {
       const selectionState = editorState.getSelection();
       const splitContentState = Modifier.splitBlock(
         contentState,
-        selectionState
+        selectionState,
       );
       const splitEditorState = EditorState.push(
         editorState,
         splitContentState,
-        "split-block"
+        "split-block",
       );
 
       const finalEditorState = RichUtils.toggleBlockType(
         splitEditorState,
-        "unstyled"
+        "unstyled",
       );
 
       setEditorState(finalEditorState);
@@ -259,16 +258,16 @@ function App() {
       const selectionState = editorState.getSelection();
       const splitContentState = Modifier.splitBlock(
         contentState,
-        selectionState
+        selectionState,
       );
       const splitEditorState = EditorState.push(
         editorState,
         splitContentState,
-        "split-block"
+        "split-block",
       );
       const finalEditorState = RichUtils.toggleInlineStyle(
         splitEditorState,
-        "BOLD"
+        "BOLD",
       );
 
       setEditorState(finalEditorState);
@@ -283,16 +282,16 @@ function App() {
       const selectionState = editorState.getSelection();
       const splitContentState = Modifier.splitBlock(
         contentState,
-        selectionState
+        selectionState,
       );
       const splitEditorState = EditorState.push(
         editorState,
         splitContentState,
-        "split-block"
+        "split-block",
       );
       const finalEditorState = RichUtils.toggleInlineStyle(
         splitEditorState,
-        "RED_TEXT"
+        "RED_TEXT",
       );
 
       setEditorState(finalEditorState);
@@ -307,16 +306,16 @@ function App() {
       const selectionState = editorState.getSelection();
       const splitContentState = Modifier.splitBlock(
         contentState,
-        selectionState
+        selectionState,
       );
       const splitEditorState = EditorState.push(
         editorState,
         splitContentState,
-        "split-block"
+        "split-block",
       );
       const finalEditorState = RichUtils.toggleInlineStyle(
         splitEditorState,
-        "UNDERLINE"
+        "UNDERLINE",
       );
 
       setEditorState(finalEditorState);
@@ -338,12 +337,13 @@ function App() {
       <main className="p-0 m-0 h-screen w-screen flex flex-col items-center">
         <div className="flex items-end justify-around mb-4">
           <div>
-            <p className="font-bold text-xl w-full text-center">Demo Editor Kartikey Sharma</p>
+            <p className="font-bold text-xl w-full text-center">
+              Demo Editor Kartikey Sharma
+            </p>
             <Button variant="contained" onClick={handleSave}>
-            Save
-          </Button>
+              Save
+            </Button>
           </div>
-          
         </div>
         <div className="bg-white h-2/5 w-7/12 border-2 border-black border-solid">
           <Editor
@@ -382,7 +382,7 @@ function App() {
               <p className="mr-2" />
               Press `Save` Button to save your data
             </div>
-        </div>
+          </div>
         </div>
       </main>
     </>
