@@ -1,5 +1,4 @@
 import KeyboardReturnIcon from "@mui/icons-material/KeyboardReturn";
-import "./App.css";
 import { useState } from "react";
 import {
   Editor,
